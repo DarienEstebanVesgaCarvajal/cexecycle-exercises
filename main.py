@@ -1,6 +1,5 @@
-size = 10
+divisor = int(input("What number do you want to know its divisors?: "))
 
-for x in range(1, size + 1):
-    for y in range (1, size + 1):
-        print(str(x * y).rjust(5), end="")
-    print()
+for x in range(1, divisor +1):
+    if divisor % x == 0:
+        print(x, end = " ")
