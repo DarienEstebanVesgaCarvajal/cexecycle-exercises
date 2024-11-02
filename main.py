@@ -1,11 +1,11 @@
-side = int(input("What's the side length?: "))
+numberTerms = int(input("What's the number of terms?: "))
 
-for x in range(2 * side - 1):
-    if x < side:
-        spaces = side - x - 1
-        dots = side + 2 * x
-    else:
-        spaces = x - side + 1
-        dots = side + 2 * (2 * side - x - 2)    
+piEstimate = 0
 
-    print(' ' * spaces + '·' * dots)
+for x in range(numberTerms):
+    term = (-1) ** x / (2 * x + 1)
+    piEstimate += term
+
+piEstimate *= 4
+
+print(piEstimate)
