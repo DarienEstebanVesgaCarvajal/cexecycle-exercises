@@ -1,5 +1,4 @@
-number = int(input("Enter a number: "))
+numberPotence = int(input("How many powers will the number be raised to?: "))
 
-for i in range(1, 11):
-    result = number * i
-    print(f"{number} x {i} = {result}")
+for x in range(numberPotence + 1):
+    print(f"2 ^ {x} = {2 ** x}")
