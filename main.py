@@ -1,14 +1,5 @@
-totalTime = 0
+high = int(input("What's the height?: "))
+width = int(input("What's the width?: "))
 
-while True:
-    sectionDuration = int(input("What's the duration of the section?: "))
-    
-    if sectionDuration == 0:
-        break   
-
-    totalTime += sectionDuration
-
-hours = totalTime // 60
-minutes = totalTime % 60
-
-print(f"Total travel time: {hours}:{minutes:02d} hours")
+for _ in range(high):
+    print('·' * width)
