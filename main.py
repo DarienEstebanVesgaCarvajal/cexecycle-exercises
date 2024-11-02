@@ -1,11 +1,14 @@
-numberTerms = int(input("What's the number of terms?: "))
+power = 1
+fraction = 0.5
+cumulativeSum = 0
 
-piEstimate = 0
+print("Power    Fraction  Sum")
 
-for x in range(numberTerms):
-    term = (-1) ** x / (2 * x + 1)
-    piEstimate += term
+while fraction > 0.000001:
+    cumulativeSum += fraction
+    print(f"{power:<9} {fraction:<9} {cumulativeSum:<9}")
+    power += 1
+    fraction = 1 / (2 ** power)
 
-piEstimate *= 4
-
-print(piEstimate)
+if fraction <= 0.000001:
+    print(f"Final fraction: {fraction} is less than or equal to 0.000001. Terminating the program.")
