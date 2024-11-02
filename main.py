@@ -1,14 +1,19 @@
-power = 1
-fraction = 0.5
-cumulativeSum = 0
+def factorial(n):
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
 
-print("Power    Fraction  Sum")
+eApproximation = 0.0
+n = 0 
 
-while fraction > 0.000001:
-    cumulativeSum += fraction
-    print(f"{power:<9} {fraction:<9} {cumulativeSum:<9}")
-    power += 1
-    fraction = 1 / (2 ** power)
+while True:
+    currentTerm = 1 / factorial(n)
+    eApproximation += currentTerm
 
-if fraction <= 0.000001:
-    print(f"Final fraction: {fraction} is less than or equal to 0.000001. Terminating the program.")
+    if n > 0 and abs(currentTerm) < 0.0001:
+        break
+
+    n += 1
+
+print(f"Approximation of e: {eApproximation:.6f}")
